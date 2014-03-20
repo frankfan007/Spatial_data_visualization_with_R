@@ -1,2 +1,2 @@
-Spatia_data_visualization_with_R
+Spatial data visualization with R
 ================================
