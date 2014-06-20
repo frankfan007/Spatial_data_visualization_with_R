@@ -76,7 +76,7 @@ Applied Spatial Data Analysis with R. First edition.
 Applied Spatial Data Analysis with R. Second edition.
 Spatial Data Analysis in Ecology and Agriculture Using R.
 Displaying Time Series, Spatial, and Space-Time Data with R.
-Applied Spatial Data Analysis with R. First edition. (Cookbook example)
+R Graphics Cookbook. (Cookbook example)
 Investigation of Spatial Patterns of Animal Disease.
 Learning Geospatial Analysis with Python.
 
