@@ -1,0 +1,105 @@
+CONTENTS
+
+Section I - vector data
+
+1.1 Import from common formats
+1.1.1 Shapefile
+1.1.2 XML
+1.1.3 KML
+1.1.4 OSM
+1.1.5 GML
+1.1.6 CAD files
+1.1.7 GeoJason
+1.2 Classes and methods
+1.3 Coordinate reference systems (CRS)
+1.3.1 Identify the current CRS
+1.3.2 Transform the CRS
+1.4 Data preparation
+1.4.1 Subset
+1.4.2 Add
+1.4.3 Replace
+1.4.4 Merge
+1.5 Basic vector operations
+1.5.1 Buffer
+1.5.2 Dissolve
+1.5.3 Generalize
+1.5.4 Intersection
+1.5.6 Merge
+1.5.7 Point in polygon
+1.5.8 Union
+1.5.9 Join
+1.6 Plotting
+1.6.1 Basics
+1.6.2 Attributes and multivariate data
+1.7 Save figures
+1.8 Export in common formats
+
+
+Section II - raster data
+
+2.1 Import from common formats
+2.1.1 TIFF
+2.1.2 JPEG
+2.1.3 GIF
+2.1.4 BMP
+2.1.5 PNG
+2.2 Classes and methods
+2.3 Coordinate reference systems (CRS)
+2.3.1 Identify the current CRS
+2.3.2 Transform the CRS
+2.4 Data preparation
+2.4.1 Subset
+2.4.2 Add
+2.4.3 Replace
+2.4.4 Merge
+2.5 Plotting
+2.5.1 Basics
+2.5.2 Attributes and multivariate data
+2.6 Save figures
+2.7 Export in common formats
+
+
+PACKAGES
+CRAN Task View: Analysis of Spatial Data +
+ base
+ ggplot2
+ lattice
+ latticeExtra
+ graphics
+ choroplethr
+
+
+REFERENCES
+
+Books:
+Applied Spatial Data Analysis with R. First edition.
+Applied Spatial Data Analysis with R. Second edition.
+Spatial Data Analysis in Ecology and Agriculture Using R.
+Displaying Time Series, Spatial, and Space-Time Data with R.
+Applied Spatial Data Analysis with R. First edition. (Cookbook example)
+Investigation of Spatial Patterns of Animal Disease.
+Learning Geospatial Analysis with Python.
+
+R-bloggers:
+http://www.r-bloggers.com/using-r-working-with-geospatial-data-and-ggplot2/
+http://www.r-bloggers.com/13-mapping-in-r-representing-geospatial-data-together-with-ggplot/
+http://www.r-bloggers.com/aggregation-of-point-data-to-polygons-mkii-us-states-2/
+http://www.r-bloggers.com/extract-coordinates-and-other-data-from-kml-in-r/
+http://www.r-bloggers.com/convert-openstreetmap-objects-to-kml-with-r/
+http://www.r-bloggers.com/use-case-make-contour-lines-for-google-earth-with-spatial-r/
+http://www.r-bloggers.com/use-case-spatial-r-google-earth-for-terrain-analyses/
+http://www.r-bloggers.com/introducing-crimemap-a-web-app-powered-by-shinyapps/
+Search: gis spatial map
+
+Stackoverflow:
+Search: r gis spatial map
+
+Other references:
+http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/crime.html
+https://github.com/hadley/ggplot2/wiki/plotting-polygon-shapefiles
+http://rpubs.com/m_dev/Intro-to-Spatial-Data-and-ggplot2
+http://robinlovelace.net/r/2014/01/30/spatial-data-with-R-tutorial.html
+http://stat405.had.co.nz/ggmap.pdf
+http://nceas.ucsb.edu/~frazier/RSpatialGuides/OverviewCoordinateReferenceSystems.pdf
+http://rwiki.sciviews.org/doku.php?id=tips:spatial-data:change_crs
+http://docs.ggplot2.org/current/
