@@ -22,3 +22,8 @@ library(Rgitbook)
 # SUMMARY.md file.
 buildGitbook()
 openGitbook()
+
+#### Publish ####
+publishGitbook('oswaldosantos/Spatial_data_visualization_with_R',
+               +                message = 'Update built gitbook',
+               +                out.dir = paste0(getwd(), '/Book/_book'))
