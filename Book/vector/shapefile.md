@@ -4,7 +4,7 @@
 You want to read a shapefile.
 
 # Solution
-The ``rgdal`` package has the function ``readOGR()`` to read shapefiles:
+* The ``rgdal`` package has the function ``readOGR()`` to read shapefiles:
 
 ```r
 > library(rgdal)
@@ -17,12 +17,21 @@ Source: "../../Data", layer: "cities"
 with 606 features and 4 fields
 Feature type: wkbPoint with 2 dimensions
 ```
-The ``maptools`` package also has functions to read shapefiles:
+
+* The ``maptools`` package also has functions to read shapefiles:
 
 ```r
 > library(maptools)
 > cities <- readShapeSpatial('../../Data/cities')
 ```
+
+* The ``PBSmapping`` package, which uses ``maptools``, ``sp``, ``rgeos`` and ``foreign`` packages, also has functions to read shapefiles:
+
+```r
+> library(PBSmapping);
+> cities <- importShapefile('../../Data/cities.shp');
+```
+
 
 
 # Discussion
