@@ -103,3 +103,15 @@ http://stat405.had.co.nz/ggmap.pdf
 http://nceas.ucsb.edu/~frazier/RSpatialGuides/OverviewCoordinateReferenceSystems.pdf
 http://rwiki.sciviews.org/doku.php?id=tips:spatial-data:change_crs
 http://docs.ggplot2.org/current/
+
+
+Visualising Spatial Data .................................. 593.1 TheTraditionalPlotSystem............................. 603.1.1 Plotting Points, Lines, Polygons, and Grids . . . . . . . . . . 603.1.2 Axes and Layout Elements ........................ 613.1.3 Degrees in Axes Labels and Reference Grid .......... 653.1.4 Plot Size, Plotting Area, Map Scale,and Multiple Plots ............................... 663.1.5 PlottingAttributesandMapLegends............... 683.2 Trellis/Lattice Plots with spplot......................... 693.2.1 A Straight Trellis Example ........................ 703.2.2 Plotting Points, Lines, Polygons, and Grids . . . . . . . . . . 703.2.3 Adding Reference and Layout Elements to Plots . . . . . 733.2.4 Arranging Panel Layout........................... 743.3 Alternatives Routes: ggplot, latticeExtra ................. 753.4 Interactive Plots ....................................... 763.4.1 Interacting with Base Graphics..................... 773.4.2 Interacting with spplot and Lattice Plots . . . . . . . . . . . 783.5 Colour Palettes and Class Intervals ....................... 793.5.1 Colour Palettes .................................. 793.5.2 Class Intervals ................................... 79
+
+Thematic Maps 
+Proportional Symbol Mapping 
+Choropleth Maps 
+Raster Maps 
+Vector Fields
+Reference and Physical Maps 
+Physical Maps 
+OpenStreetMap with Hill Shade Layers
