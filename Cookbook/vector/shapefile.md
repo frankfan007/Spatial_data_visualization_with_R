@@ -8,19 +8,6 @@ The ``rgdal`` package has the function ``readOGR()`` to read shapefiles:
 
 ```r
 > library(rgdal)
-```
-
-```
-Loading required package: sp
-rgdal: version: 0.8-16, (SVN revision 498)
-Geospatial Data Abstraction Library extensions to R successfully loaded
-Loaded GDAL runtime: GDAL 1.10.1, released 2013/08/26
-Path to GDAL shared files: /usr/share/gdal/1.10
-Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
-Path to PROJ.4 shared files: (autodetected)
-```
-
-```r
 > cities <- readOGR('../../Data', 'cities')
 ```
 
@@ -34,16 +21,6 @@ The ``maptools`` package also has functions to read shapefiles:
 
 ```r
 > library(maptools)
-```
-
-```
-Checking rgeos availability: FALSE
- 	Note: when rgeos is not available, polygon geometry 	computations in maptools depend on gpclib,
- 	which has a restricted licence. It is disabled by default;
- 	to enable gpclib, type gpclibPermit()
-```
-
-```r
 > cities <- readShapeSpatial('../../Data/cities')
 ```
 
