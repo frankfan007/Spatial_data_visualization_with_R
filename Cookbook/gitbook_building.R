@@ -25,5 +25,5 @@ openGitbook()
 
 #### Publish ####
 #publishGitbook('oswaldosantos/Spatial_data_visualization_with_R',
-#               message = 'Update built gitbook',
-#               out.dir = paste0(getwd(), '/Cookbook/_book'))
+ #              message = 'Update built gitbook',
+  #             out.dir = paste0(getwd(), '/Cookook/_book'))
