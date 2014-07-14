@@ -6,9 +6,28 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 
 ```
 
+# problem
+you want to append a data base inside a shapefile, using different reference cagories.
 
+# solution 
+the package base has the ``merge`` function that can make join of two data frames 
 
+```{r merge}
+library(base)
+cities <- readOGR( ".", "xxxx" )
+renda <- read.csv( "renda_distrito.R", header = TRUE )
+str( cities, 2 )
+str(renda)
+cities.renda <- merge( by = "nombre.distrito", cities@data$distrito, renda )
+str( cities.renda )
+cities@data$renda <- cities.renda$x
+```
 
+#Discusion 
+
+To know the structure of shapefile and of a variavel used is important for the join. we need have a reference variavel with the categories of reference for could make the join for this do you need select a variavel that has the diferents categories of shapefile as the other file. After applied a funtion ``merge``, a new dataframe is create with two variavels, the firs variavel are references categories and the second .........
+
+# see also
 
 
 
