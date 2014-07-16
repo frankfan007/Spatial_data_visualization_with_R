@@ -20,7 +20,49 @@ The ``maptools`` package also has functions to read shapefiles:
 library(maptools)
 cities <- readShapeSpatial('../../Data/cities')
 ```
+The ``PBSmapping`` package, which requires the ```maptools``, ``sp``, ``rgeos`` and ``foreign`` packages, also has functions to read shapefiles:
+```{r importShapefile}
+library(PBSmapping);
+library(maptools);
+library(sp);
+library(rgeos);
+library(foreign);
+cities <- importShapefile('../../Data/cities', readDBF=FALSE);
+plotPoints(cities);
+```
 
+```{r PBSmapping}
+# plot a Map
+# plotMap()
+
+# Add polygons to a Map
+# addPolys()
+
+# Transform geographic points in a dataframe to a EventData
+# as.EventData()
+
+# Add points to a Map
+# addPoints()
+
+# Calculate polygon area
+# calcArea()
+
+# Get the class of an object
+# class()
+
+# Convert lat-lon coordinates to UTM
+# convUL()
+
+# Convert an PBSmapping object to a SP object
+# PolySet2SpatialPolygons()
+
+# Access a SP polygon attribute
+# slot(<object>, "<attribute>")
+# <object>@<attribute>
+
+# Get the number of SP subpolygons inside a SP polygon
+# length(<object>@<attribute>)
+```
 
 # Discussion
 The Esri [shapefile](http://en.wikipedia.org/wiki/Shapefile), or simply a shapefile, is a popular geospatial vector data format for storing geometric location and associated attribute information. A shapefile is a set of files. Three individual files are mandatory to store the core data that comprise a shapefile: .shp, .shx, and .dbf. There are further optional files which store primarily index data to improve performance. All files should be located in the same folder.  
