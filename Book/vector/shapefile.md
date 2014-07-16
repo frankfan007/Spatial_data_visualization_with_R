@@ -11,13 +11,13 @@ The ``rgdal`` package has the function ``readOGR()`` to read shapefiles:
 ```
 
 ```
-Loading required package: sp
 rgdal: version: 0.8-16, (SVN revision 498)
 Geospatial Data Abstraction Library extensions to R successfully loaded
-Loaded GDAL runtime: GDAL 1.10.1, released 2013/08/26
-Path to GDAL shared files: /usr/share/gdal/1.10
+Loaded GDAL runtime: GDAL 1.11.0, released 2014/04/16
+Path to GDAL shared files: C:/Users/raul/Documents/R/win-library/3.1/rgdal/gdal
+GDAL does not use iconv for recoding strings.
 Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
-Path to PROJ.4 shared files: (autodetected)
+Path to PROJ.4 shared files: C:/Users/raul/Documents/R/win-library/3.1/rgdal/proj
 ```
 
 ```r
@@ -34,19 +34,55 @@ The ``maptools`` package also has functions to read shapefiles:
 
 ```r
 > library(maptools)
-```
-
-```
-Checking rgeos availability: FALSE
- 	Note: when rgeos is not available, polygon geometry 	computations in maptools depend on gpclib,
- 	which has a restricted licence. It is disabled by default;
- 	to enable gpclib, type gpclibPermit()
-```
-
-```r
 > cities <- readShapeSpatial('../../Data/cities')
 ```
+The ``PBSmapping`` package, which requires the ```maptools``, ``sp``, ``rgeos`` and ``foreign`` packages, also has functions to read shapefiles:
 
+```r
+> library(PBSmapping);
+> library(maptools);
+> library(sp);
+> library(rgeos);
+> library(foreign);
+> cities <- importShapefile('../../Data/cities', readDBF=FALSE);
+> plotPoints(cities);
+```
+
+![plot of chunk importShapefile](figure/importShapefile.png) 
+
+
+```r
+> # plot a Map
+> # plotMap()
+> 
+> # Add polygons to a Map
+> # addPolys()
+> 
+> # Transform geographic points in a dataframe to a EventData
+> # as.EventData()
+> 
+> # Add points to a Map
+> # addPoints()
+> 
+> # Calculate polygon area
+> # calcArea()
+> 
+> # Get the class of an object
+> # class()
+> 
+> # Convert lat-lon coordinates to UTM
+> # convUL()
+> 
+> # Convert an PBSmapping object to a SP object
+> # PolySet2SpatialPolygons()
+> 
+> # Access a SP polygon attribute
+> # slot(<object>, "<attribute>")
+> # <object>@<attribute>
+> 
+> # Get the number of SP subpolygons inside a SP polygon
+> # length(<object>@<attribute>)
+```
 
 # Discussion
 The Esri [shapefile](http://en.wikipedia.org/wiki/Shapefile), or simply a shapefile, is a popular geospatial vector data format for storing geometric location and associated attribute information. A shapefile is a set of files. Three individual files are mandatory to store the core data that comprise a shapefile: .shp, .shx, and .dbf. There are further optional files which store primarily index data to improve performance. All files should be located in the same folder.  
