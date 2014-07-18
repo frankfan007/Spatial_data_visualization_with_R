@@ -32,12 +32,6 @@ plotPoints(cities);
 ```
 
 ```{r PBSmapping}
-# plot a Map
-# plotMap()
-
-# Add polygons to a Map
-# addPolys()
-
 # Transform geographic points in a dataframe to a EventData
 # as.EventData()
 
@@ -63,6 +57,19 @@ plotPoints(cities);
 # Get the number of SP subpolygons inside a SP polygon
 # length(<object>@<attribute>)
 ```
+
+
+
+Data source: [Fundação Estadual de Proteção Ambiental Henrique Luiz Roessler - RS (fepam)](http://www.fepam.rs.gov.br/biblioteca/geo/bases_geo.asp)
+
+```{r}
+library(PBSmapping);
+rsmunicipios <- importShapefile('../../Data/municipios_IBGE/Municipios_IBGE', readDBF=FALSE);
+plotMap(rsmunicipios);
+rslagos <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
+addPolys(rslagos, col="lightblue1");
+```
+
 
 # Discussion
 The Esri [shapefile](http://en.wikipedia.org/wiki/Shapefile), or simply a shapefile, is a popular geospatial vector data format for storing geometric location and associated attribute information. A shapefile is a set of files. Three individual files are mandatory to store the core data that comprise a shapefile: .shp, .shx, and .dbf. There are further optional files which store primarily index data to improve performance. All files should be located in the same folder.  

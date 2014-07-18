@@ -5,22 +5,3 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 ##### Put other setup R code here
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
