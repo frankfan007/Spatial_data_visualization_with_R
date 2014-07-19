@@ -6,21 +6,74 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 
 ```
 
+```{r}
+# How to plot Points?
+cities <- importShapefile('../../Data/cities', readDBF=FALSE);
+plotPoints(cities);
+```
 
+Data source: [Fundação Estadual de Proteção Ambiental Henrique Luiz Roessler - RS (fepam)](http://www.fepam.rs.gov.br/biblioteca/geo/bases_geo.asp)
 
+```{r}
+library(PBSmapping);
+rsmunicipios <- importShapefile('../../Data/municipios_IBGE/Municipios_IBGE', readDBF=FALSE);
+plotMap(rsmunicipios);
 
+rslagos <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
+addPolys(rslagos, col="lightblue1");
 
+# Create a data frame with the points coordinates
+pointCoordinates <- as.data.frame( cbind(1, -30.027879, -51.228467) );
+# Requirement: Rename the data frame columns (EID=unique identifier, Y=latitude e X=longitude)
+colnames(pointCoordinates) <- c("EID", "Y", "X");
+# Coerce the data frame to a EventData object, which is the standard object class of PBS Mapping functions
+PBSMappingCoordinates <- as.EventData( pointCoordinates, projection='LL');
+# Plot the points on the map (pch=point type, col=point color)
+addPoints(PBSMappingCoordinates, pch=19, col="red");
+```
 
+```{r}
+# How to calculate the Areas of Polygons
+polygonArea <- calcArea(rslagos, rollup=3);
+head(polygonArea);
+```
 
+```{r}
+# How to convert lat-long coordinates to UTM?
+pointCoordinates <- as.data.frame( cbind(1, -30.027879, -51.228467) );
+colnames(pointCoordinates) <- c("EID", "Y", "X");
+latLongCoordinates <- as.EventData( pointCoordinates, projection='LL');
+# Convert coordinates
+aux <- convUL(latLongCoordinates);
+print(aux);
+```
 
+```{r}
+# How to check an object class?
+rsmunicipios <- importShapefile('../../Data/municipios_IBGE/Municipios_IBGE', readDBF=FALSE);
+str(rsmunicipios);
+class(rsmunicipios);
+```
 
+```{r}
+# How to convert a PBSmapping object to a SP object
+PBSMappingObject <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
+class(PBSMappingObject);
+SPObject <- PolySet2SpatialPolygons(PBSMappingObject);
+class(SPObject);
+```
 
+```{r}
+# How to access a SP Polygon attribute?
+rslagos <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
+rslagos <- PolySet2SpatialPolygons(rslagos);
+aux1 <- slot(rslagos, "polygons");
+aux2 <- rslagos@polygons;
+```
 
-
-
-
-
-
-
-
-
+```{r}
+# How to get the number of sub-polygons in a Polygon?
+rslagos <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
+rslagos <- PolySet2SpatialPolygons(rslagos);
+length(rslagos@polygons);
+```

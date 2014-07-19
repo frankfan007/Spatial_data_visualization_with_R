@@ -32,53 +32,7 @@ The ``PBSmapping`` package, which requires the ```maptools``, ``sp``, ``rgeos`` 
 > library(rgeos);
 > library(foreign);
 > cities <- importShapefile('../../Data/cities', readDBF=FALSE);
-> plotPoints(cities);
 ```
-
-![plot of chunk importShapefile](figure/importShapefile.png) 
-
-
-```r
-> # Transform geographic points in a dataframe to a EventData
-> # as.EventData()
-> 
-> # Add points to a Map
-> # addPoints()
-> 
-> # Calculate polygon area
-> # calcArea()
-> 
-> # Get the class of an object
-> # class()
-> 
-> # Convert lat-lon coordinates to UTM
-> # convUL()
-> 
-> # Convert an PBSmapping object to a SP object
-> # PolySet2SpatialPolygons()
-> 
-> # Access a SP polygon attribute
-> # slot(<object>, "<attribute>")
-> # <object>@<attribute>
-> 
-> # Get the number of SP subpolygons inside a SP polygon
-> # length(<object>@<attribute>)
-```
-
-
-
-Data source: [Fundação Estadual de Proteção Ambiental Henrique Luiz Roessler - RS (fepam)](http://www.fepam.rs.gov.br/biblioteca/geo/bases_geo.asp)
-
-
-```r
-> library(PBSmapping);
-> rsmunicipios <- importShapefile('../../Data/municipios_IBGE/Municipios_IBGE', readDBF=FALSE);
-> plotMap(rsmunicipios);
-> rslagos <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
-> addPolys(rslagos, col="lightblue1");
-```
-
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
 
 
 # Discussion
