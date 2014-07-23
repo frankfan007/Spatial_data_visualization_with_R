@@ -4,17 +4,62 @@
 ```r
 > # How to plot Points?
 > cities <- importShapefile('../../Data/cities', readDBF=FALSE);
+```
+
+```
+Error: could not find function "importShapefile"
+```
+
+```r
 > plotPoints(cities);
 ```
 
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
+```
+Error: could not find function "plotPoints"
+```
 
 Data source: [Fundação Estadual de Proteção Ambiental Henrique Luiz Roessler - RS (fepam)](http://www.fepam.rs.gov.br/biblioteca/geo/bases_geo.asp)
 
 
 ```r
 > library(PBSmapping);
+```
+
+```
+
+-----------------------------------------------------------
+PBS Mapping 2.67.60 -- Copyright (C) 2003-2013 Fisheries and Oceans Canada
+
+PBS Mapping comes with ABSOLUTELY NO WARRANTY;
+for details see the file COPYING.
+This is free software, and you are welcome to redistribute
+it under certain conditions, as outlined in the above file.
+
+A complete user guide 'PBSmapping-UG.pdf' is located at 
+C:/Users/raul/Documents/R/win-library/3.1/PBSmapping/doc/PBSmapping-UG.pdf
+
+Packaged on 2014-03-27
+Pacific Biological Station, Nanaimo
+
+All available PBS packages can be found at
+http://code.google.com/p/pbs-software/
+
+To see demos, type '.PBSfigs()'.
+-----------------------------------------------------------
+```
+
+```r
 > rsmunicipios <- importShapefile('../../Data/municipios_IBGE/Municipios_IBGE', readDBF=FALSE);
+```
+
+```
+Loading required package: maptools
+Loading required package: sp
+Checking rgeos availability: TRUE
+Loading required package: foreign
+```
+
+```r
 > plotMap(rsmunicipios);
 > 
 > rslagos <- importShapefile('../../Data/grandes_lagos_1_250000/Grandes_Lagos_1_250000', readDBF=FALSE);
