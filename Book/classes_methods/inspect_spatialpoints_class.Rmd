@@ -1,0 +1,54 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=TRUE, comment='', results='markup')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+```
+
+# Problem
+You want to display the definition of classes `SpatialPoints` and `SpatialPointsDataFrame`.
+
+# Solution
+Use the `getClass` function:
+```{r readOGR}
+library(sp)
+getClass('SpatialPoints')
+getClass('SpatialPointsDataFrame')
+```
+
+# Discussion
+Note that the `SpatialPoints` class extends the `Spatial` class adding the `coords` slot. `coords` is a `matrix` containing the points coordinates. On the other hand, `SpatialPointsDataFrame` extends `SpatialPoints` adding the `data` and `coords.nrs` slots. `data` is a `data.frame` with features or attributes of points. Each row is associated with a point. There are different ways to create a `SpatialPointsDataFrame`. When the `data.frame` with points features also has the points coordinates, the `coords` slot can be created from that `data.frame`. When this procedure is used, the columns in `data` slot with the coordinates are moved to the `coords` slot. `coords.nrs` indicates the index of that columns in the original `data.frame`.
+
+# See also
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
