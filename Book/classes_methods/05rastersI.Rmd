@@ -1,0 +1,56 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=TRUE, comment='', results='markup')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+```
+
+# Problem
+You want to display the structure of classes `GridTopology`, `SpatialGrid` and `SpatialPixels` and to build instances of theses classes. You also want to inspect an object of class `SpatialixelsDataFrame`.
+
+# Solution
+```{r raster objects}
+## Classes structure.
+
+library(sp)
+getClass('GridTopology')
+getClass('SpatialGrid')
+getClass('SpatialPixels')
+
+## Build objects of the classes above.
+
+box <- matrix(c(-100, -80, 100, 80), ncol = 2,
+              dimn = list(NULL, c('min', 'max')))
+cell.size <- c(0.1, 0.1)
+cell.center <- box[ , 1] + cell.size * 0.5
+cell.dim <- ceiling(diff(t(box)) / cell.size)
+
+# GridTopology.
+(gt <- GridTopology(cellcentre.offset = cell.center,
+                    cellsize = cell.size, cells.dim = cell.dim))
+
+# SpatialGrid.
+crs <- CRS('+proj=longlat +datum=WGS84')
+sg <- SpatialGrid(gt, proj4string = crs)
+str(sg)
+
+# SpatialPixels.
+spx <- as(sg, 'SpatialPixels')
+str(spx)
+
+## Inspect an object of class SpatialPixelsDataFrame.
+data(meuse.grid)
+spxd = SpatialPixelsDataFrame(points = meuse.grid[c("x", "y")],
+                              data = meuse.grid)
+str(spxd)
+head(spxd@data)
+```
+
+# Discussion
+The `GridTopology` class has three slots to describe a grid. The `cellsize` slot represents the cell resolution and the `cells.dim`, the number of columns and rows. These two slots define the grid extent. The origin of the grid is the lower-left cell center. To include the lower-left corner of the grid in the `GridTopology` representation, that cell center must be offset using the `cellcentre.offset`. The `SpatialGrid` class extends the `GridTopology` with the `bbox` and `proj4string` slots. An alternative representation of raster data is given by the cell center coordinates and a sequence of numbers to identify each cell in the whole raster. With this representation, data processing is more efficient since missing data can be discarded. The `SpatialPixels` class is an examle of this representation, which deine the cell center coordinates and the sequence of numbers in the slots `coords` and `grid.index`, respectively.  
+
+Knowing the lower-left corner coordinates and the cell resolution, the cell center offset as well as the number of cloumns/rows can be easly defined. These information is enough to build a `GridTopology` object. To build a `SpatialGrid` object, a `GridTopology` object can be combined with a valid coordinate reference system definition. From a `SpatialGrid` (or `SpatialPoints`) object, a `SpatialPixels` object can be built. `SpatialGridDataFrame` and `SpatialPixelsDataFrame` extend their respective superclasses with the `data` slot.
+
+
+# See also

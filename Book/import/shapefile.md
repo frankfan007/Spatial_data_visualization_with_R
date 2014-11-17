@@ -8,19 +8,6 @@ The ``rgdal`` package has the function ``readOGR()`` to read shapefiles:
 
 ```r
 > library(rgdal)
-```
-
-```
-rgdal: version: 0.8-16, (SVN revision 498)
-Geospatial Data Abstraction Library extensions to R successfully loaded
-Loaded GDAL runtime: GDAL 1.11.0, released 2014/04/16
-Path to GDAL shared files: C:/Users/raul/Documents/R/win-library/3.1/rgdal/gdal
-GDAL does not use iconv for recoding strings.
-Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
-Path to PROJ.4 shared files: C:/Users/raul/Documents/R/win-library/3.1/rgdal/proj
-```
-
-```r
 > cities <- readOGR('../../Data', 'cities')
 ```
 
@@ -40,20 +27,29 @@ The ``PBSmapping`` package, which requires the ```maptools``, ``sp``, ``rgeos`` 
 
 ```r
 > library(PBSmapping);
+```
+
+```
+Error: there is no package called 'PBSmapping'
+```
+
+```r
 > library(maptools);
 > library(sp);
 > library(rgeos);
 ```
 
 ```
-rgeos version: 0.3-6, (SVN revision 450)
- GEOS runtime version: 3.4.2-CAPI-1.8.2 r3921 
- Polygon checking: TRUE 
+Error: there is no package called 'rgeos'
 ```
 
 ```r
 > library(foreign);
 > cities <- importShapefile('../../Data/cities', readDBF=FALSE);
+```
+
+```
+Error: could not find function "importShapefile"
 ```
 
 

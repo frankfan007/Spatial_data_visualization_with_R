@@ -8,7 +8,7 @@ In S4, classes have formal definitions which describe their fields and inheritan
 
 The foundation class for spatial objects is `Spatial` and it is extended by several subclasses that create a powerful environment to represent, manipulate and visualize vector and raster data.
 
-This section has recepies to inspect the structure of spatial objects and access their slots. These recepies are the basis to understand the rationale behind spatial data manipulation in R and are used throughout the book.
+This section has recepies to display the structure of spatial objects and access their slots. Spatial object are usually read from files but can also be built fromother R objects. For some classes, the recepies include the process to build and object. These recepies are the basis to understand the rationale behind spatial data manipulation in R and are used throughout the book.
 
 
 

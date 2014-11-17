@@ -13,7 +13,7 @@ the package base has the ``merge`` function that can make join of two data frame
 ```
 
 ```
-Error: could not find function "readOGR"
+Error: Cannot open file
 ```
 
 ```r
@@ -33,7 +33,15 @@ Error: cannot open the connection
 ```
 
 ```
-Error: object 'cities' not found
+Formal class 'SpatialPointsDataFrame' [package "sp"] with 5 slots
+  ..@ data       :'data.frame':	606 obs. of  4 variables:
+  .. ..- attr(*, "data_types")= chr [1:4] "C" "C" "N" "C"
+  ..@ coords.nrs : num(0) 
+  ..@ coords     : num [1:606, 1:2] 33.1 40.6 30.5 150.8 56.2 ...
+  .. ..- attr(*, "dimnames")=List of 2
+  ..@ bbox       : num [1:2, 1:2] -165.3 -53.2 177.1 78.2
+  .. ..- attr(*, "dimnames")=List of 2
+  ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slots
 ```
 
 ```r
@@ -49,7 +57,7 @@ Error: object 'renda' not found
 ```
 
 ```
-Error: object 'cities' not found
+Error: object 'renda' not found
 ```
 
 ```r
