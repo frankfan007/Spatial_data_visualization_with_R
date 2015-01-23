@@ -13,7 +13,7 @@ the package base has the ``merge`` function that can make join of two data frame
 ```
 
 ```
-Error: could not find function "readOGR"
+Error: Cannot open file
 ```
 
 ```r
@@ -33,7 +33,14 @@ Error: cannot open the connection
 ```
 
 ```
-Error: object 'cities' not found
+Classes 'EventData' and 'data.frame':	606 obs. of  3 variables:
+ $ EID: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ X  : num  33.1 40.6 30.5 150.8 56.2 ...
+ $ Y  : num  69 64.5 60 59.6 58 ...
+ - attr(*, "parent.child")= num 
+ - attr(*, "shpType")= int 1
+ - attr(*, "prj")= chr "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degre"| __truncated__
+ - attr(*, "projection")= chr "LL"
 ```
 
 ```r
@@ -49,7 +56,8 @@ Error: object 'renda' not found
 ```
 
 ```
-Error: object 'cities' not found
+Error: trying to get slot "data" from an object (class "EventData") that
+is not an S4 object
 ```
 
 ```r

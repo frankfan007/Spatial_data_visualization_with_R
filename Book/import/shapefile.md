@@ -34,12 +34,45 @@ The ``maptools`` package also has functions to read shapefiles:
 
 ```r
 > library(maptools)
+```
+
+```
+Checking rgeos availability: TRUE
+```
+
+```r
 > cities <- readShapeSpatial('../../Data/cities')
 ```
 The ``PBSmapping`` package, which requires the ```maptools``, ``sp``, ``rgeos`` and ``foreign`` packages, also has functions to read shapefiles:
 
 ```r
 > library(PBSmapping);
+```
+
+```
+
+-----------------------------------------------------------
+PBS Mapping 2.67.60 -- Copyright (C) 2003-2013 Fisheries and Oceans Canada
+
+PBS Mapping comes with ABSOLUTELY NO WARRANTY;
+for details see the file COPYING.
+This is free software, and you are welcome to redistribute
+it under certain conditions, as outlined in the above file.
+
+A complete user guide 'PBSmapping-UG.pdf' is located at 
+C:/Users/raul/Documents/R/win-library/3.1/PBSmapping/doc/PBSmapping-UG.pdf
+
+Packaged on 2014-03-27
+Pacific Biological Station, Nanaimo
+
+All available PBS packages can be found at
+http://code.google.com/p/pbs-software/
+
+To see demos, type '.PBSfigs()'.
+-----------------------------------------------------------
+```
+
+```r
 > library(maptools);
 > library(sp);
 > library(rgeos);

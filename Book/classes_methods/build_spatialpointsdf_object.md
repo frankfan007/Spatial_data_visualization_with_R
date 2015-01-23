@@ -32,9 +32,9 @@ Second option: use a `data.frame` with both the coordinates and the features as 
 Formal class 'SpatialPointsDataFrame' [package "sp"] with 5 slots
   ..@ data       :'data.frame':	10 obs. of  2 variables:
   ..@ coords.nrs : num(0) 
-  ..@ coords     : num [1:10, 1:2] 10 9 9 4 5 8 8 8 5 4 ...
+  ..@ coords     : num [1:10, 1:2] 9 6 4 6 3 5 8 4 7 10 ...
   .. ..- attr(*, "dimnames")=List of 2
-  ..@ bbox       : num [1:2, 1:2] 4 70 10 98
+  ..@ bbox       : num [1:2, 1:2] 3 70 10 90
   .. ..- attr(*, "dimnames")=List of 2
   ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slots
 ```
@@ -63,9 +63,9 @@ Formal class 'SpatialPointsDataFrame' [package "sp"] with 5 slots
 Formal class 'SpatialPointsDataFrame' [package "sp"] with 5 slots
   ..@ data       :'data.frame':	10 obs. of  2 variables:
   ..@ coords.nrs : int [1:2] 3 4
-  ..@ coords     : num [1:10, 1:2] 10 9 9 4 5 8 8 8 5 4 ...
+  ..@ coords     : num [1:10, 1:2] 9 6 4 6 3 5 8 4 7 10 ...
   .. ..- attr(*, "dimnames")=List of 2
-  ..@ bbox       : num [1:2, 1:2] 4 70 10 98
+  ..@ bbox       : num [1:2, 1:2] 3 70 10 90
   .. ..- attr(*, "dimnames")=List of 2
   ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slots
 ```
@@ -77,9 +77,9 @@ Formal class 'SpatialPointsDataFrame' [package "sp"] with 5 slots
 
 ```
   total.cases fatal.cases
-1         171          14
-2         125          19
-3         136          21
+1         192          12
+2         123          25
+3         148          34
 ```
 
 # Discussion

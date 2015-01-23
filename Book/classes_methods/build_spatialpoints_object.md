@@ -19,9 +19,9 @@ Use a `matrix` of coordinates and a `CRS` object as arguments for the `SpatialPo
 
 ```
 Formal class 'SpatialPoints' [package "sp"] with 3 slots
-  ..@ coords     : num [1:10, 1:2] 7 4 8 10 7 6 5 9 4 8 ...
+  ..@ coords     : num [1:10, 1:2] 5 4 7 10 3 5 4 7 9 3 ...
   .. ..- attr(*, "dimnames")=List of 2
-  ..@ bbox       : num [1:2, 1:2] 4 70 10 94
+  ..@ bbox       : num [1:2, 1:2] 3 73 10 98
   .. ..- attr(*, "dimnames")=List of 2
   ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slots
 ```
@@ -42,8 +42,8 @@ Formal class 'SpatialPoints' [package "sp"] with 3 slots
 
 ```
           min max
-coords.x1   4  10
-coords.x2  70  94
+coords.x1   3  10
+coords.x2  73  98
 ```
 
 ```r
@@ -53,9 +53,9 @@ coords.x2  70  94
 
 ```
      coords.x1 coords.x2
-[1,]         7        70
-[2,]         4        73
-[3,]         8        89
+[1,]         5        85
+[2,]         4        91
+[3,]         7        79
 ```
 
 # Discussion
