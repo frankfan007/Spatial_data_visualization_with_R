@@ -1,0 +1,41 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=TRUE, comment='', results='markup')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+```
+
+# Problem
+You want to display the structure of classes used to represent polygons as well as the structure of an object of class `SpatialPolygonsDataFrame`.
+
+# Solution
+1. Use the `getClass` function to display the definition of classes.
+```{r readOGR}
+library(sp)
+getClass('Polygon')
+getClass('Polygons')
+getClass('SpatialPolygons')
+getClass('SpatialPolygonsDataFrame')
+```
+
+2. Import a shapefile with data represented by lines using the `readOGR` function from the `rgdal` package and then inspect the specific slots of a `SpatialLinesDataFrame` object:
+```{r SpatialPolygonsDataFrame}
+library(rgdal)
+# Import the shapefile.
+muns <- readOGR('../../Data/municipios_IBGE', 'Municipios_IBGE')
+  
+# Display the general structure and the second object of the "polygons" slot.
+str(muns, 2)
+str(muns@polygons[[2]])
+```
+
+# Discussion
+The `Polygon` class extends the `Line` class adding four slots: `labpt` (centroid of the polygon), `area` (area of the polygon in the metric of the coordinates), `hole` (indicates if the polygon is declared as hole), `ringDir` (ring direction of the polygon) and `coords` (point coordinates to represent polygons by interpolation). Under the hood, the `sp` package uses a non-toplogical representation of polygons and this requires specific information, which is available in the `hole` and `ringDir` slots.  
+
+The `Polygons` class has  five slots: `Polygons` (list of `Polygon` objects), `plotOrder` (defines the plotting order - from largest to smallest), `labpt` (the label point of the polygon with the greatest area), `ID` (an identifying character tag) and `area` (sum of the area of all polygons).  
+
+Note that `SpatialPolygons` class extends the `Spatial` class adding the `polygons` slot (`List` of `Polygons` objects) and the `plotOrder` slot previously discussed. On the other hand, `SpatialPolygonsDataFrame` extends `SpatialPolygons` adding the `data` slot, a `data.frame` with features or attributes of the lines. Each row is associated with a line. The `ID` slot is used to match `Polygons` objects stored in the `polygons` slot, with observations in the `data` slot.
+
+
+# See also

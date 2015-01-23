@@ -1,0 +1,43 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=TRUE, comment='', results='markup')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+```
+
+# Problem
+You want to display the structure of classes used to represent lines as well as the structure of an object of class `SpatialLinesDataFrame`.
+
+# Solution
+1. Use the `getClass` function to display the definition of classes.
+```{r readOGR}
+library(sp)
+getClass('Line')
+getClass('Lines')
+getClass('SpatialLines')
+getClass('SpatialLinesDataFrame')
+```
+
+2. Import a shapefile with data represented by lines using the `readOGR` function from the `rgdal` package and then inspect the specific slots of a `SpatialLinesDataFrame` object:
+```{r SpatialLinesDataFrame}
+library(rgdal)
+# Import the shapefile.
+fylk <- readOGR('../../Data', 'fylk_val')
+  
+# Display the general structure and the second object of the "lines" slot.
+str(fylk, 2)
+str(fylk@lines[[2]])
+fylk@lines[[2]]@Lines
+```
+
+# Discussion
+Representation of lines in the `sp` package follows a hierarchical approach with a more complex structure in comparison with the representation of points.  
+ 
+The `Line` class has two slots: `coords` and `ID`. The `coords` slot, which is a `matrix` to store point coordinates. It is the interpolation between these points (stright lines beteewn two succesive points) that represents lines. The `ID` slot has an identifying character string.
+
+The `Lines` class has the `Lines` slot, which is a `list` of `Line` objects.  
+
+Note that `SpatialLines` class extends the `Spatial` class adding the `lines` slot, which is a `List` of `Lines` objects. On the other hand, `SpatialLinesDataFrame` extends `SpatialLines` adding the `data` slot, a `data.frame` with features or attributes of the lines. Each row is associated with a line. The `ID` slot is used to match `Liness` objects stored in the `lines` slot, with observations in the `data` slot.
+
+# See also
