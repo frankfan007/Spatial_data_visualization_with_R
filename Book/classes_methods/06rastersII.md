@@ -8,29 +8,18 @@ You want to display the structure of `Raster` class and to build and inspect obj
 ```r
 > ## Raster class.
 > library(raster)
+```
+
+```
+Error: there is no package called 'raster'
+```
+
+```r
 > getClass('Raster')
 ```
 
 ```
-Virtual Class "Raster" [package "raster"]
-
-Slots:
-                                                                  
-Name:      title    extent   rotated  rotation     ncols     nrows
-Class: character    Extent   logical .Rotation   integer   integer
-                                    
-Name:        crs   history         z
-Class:       CRS      list      list
-
-Extends: "BasicRaster"
-
-Known Subclasses: 
-Class "RasterLayer", directly
-Class "RasterBrick", directly
-Class "RasterStack", directly
-Class ".RasterQuad", directly
-Class "RasterLayerSparse", by class "RasterLayer", distance 2
-Class ".RasterBrickSparse", by class "RasterBrick", distance 2
+Error: "Raster" is not a defined class
 ```
 
 ```r
@@ -40,38 +29,44 @@ Class ".RasterBrickSparse", by class "RasterBrick", distance 2
 ```
 
 ```
-class       : RasterLayer 
-dimensions  : 100, 100, 10000  (nrow, ncol, ncell)
-resolution  : 20, 10  (x, y)
-extent      : -1000, 1000, -500, 500  (xmin, xmax, ymin, ymax)
-coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 
+Error: could not find function "raster"
 ```
 
 ```r
 > # Resolution changes will change the number of columns/rows and vice versa.
 > res(rl) <- c(40, 50)
+```
+
+```
+Error: object 'rl' not found
+```
+
+```r
 > ncol(rl); nrow(rl)
 ```
 
 ```
-[1] 50
+Error: object 'rl' not found
 ```
 
 ```
-[1] 20
+Error: object 'rl' not found
 ```
 
 ```r
 > nrow(rl) <- 50
+```
+
+```
+Error: object 'rl' not found
+```
+
+```r
 > rl
 ```
 
 ```
-class       : RasterLayer 
-dimensions  : 50, 50, 2500  (nrow, ncol, ncell)
-resolution  : 40, 20  (x, y)
-extent      : -1000, 1000, -500, 500  (xmin, xmax, ymin, ymax)
-coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 
+Error: object 'rl' not found
 ```
 
 ```r
@@ -80,16 +75,23 @@ coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0
 ```
 
 ```
-[1] FALSE
+Error: could not find function "hasValues"
 ```
 
 ```r
 > values(rl) <- runif(ncell(rl))
+```
+
+```
+Error: could not find function "ncell"
+```
+
+```r
 > hasValues(rl)
 ```
 
 ```
-[1] TRUE
+Error: could not find function "hasValues"
 ```
 
 ```r
@@ -97,39 +99,73 @@ coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0
 ```
 
 ```
-     Length       Class        Mode 
-       2500 RasterLayer          S4 
+Error: object 'rl' not found
 ```
 
 ```r
 > # If the extent is changed, values are not lost. The same is not truth for changes  in the number of columns, the number of rows or resolution.
 > xmax(rl) <- 2000
+```
+
+```
+Error: object 'rl' not found
+```
+
+```r
 > hasValues(rl)
 ```
 
 ```
-[1] TRUE
+Error: could not find function "hasValues"
 ```
 
 ```r
 > ncol(rl) <- 300
+```
+
+```
+Error: object 'rl' not found
+```
+
+```r
 > hasValues(rl)
 ```
 
 ```
-[1] FALSE
+Error: could not find function "hasValues"
 ```
 
 ```r
 > ## Build a RasterStack object from two RasterLayer objects.
 > rl1 <- rl2 <- raster(nrow = 10, ncol = 10)
+```
+
+```
+Error: could not find function "raster"
+```
+
+```r
 > values(rl1) <- runif(ncell(rl1))
+```
+
+```
+Error: could not find function "ncell"
+```
+
+```r
 > values(rl2) <- runif(ncell(rl2))
+```
+
+```
+Error: could not find function "ncell"
+```
+
+```r
 > rs <- stack(rl1, rl2)
 ```
 
 ```
-Error in as.list.default(x): no method for coercing this S4 class to a vector
+Error: object 'rl1' not found
 ```
 
 ```r
@@ -137,7 +173,7 @@ Error in as.list.default(x): no method for coercing this S4 class to a vector
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'rs' not found
+Error: object 'rs' not found
 ```
 
 ```r
@@ -146,7 +182,7 @@ Error in eval(expr, envir, enclos): object 'rs' not found
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'rs' not found
+Error: object 'rs' not found
 ```
 
 ```r
@@ -155,16 +191,23 @@ Error in eval(expr, envir, enclos): object 'rs' not found
 ```
 
 ```
-Error in brick(rs): error in evaluating the argument 'x' in selecting a method for function 'brick': Error: object 'rs' not found
+Error: could not find function "brick"
 ```
 
 ```r
 > rb2 <- brick(rl1, rl2)
+```
+
+```
+Error: could not find function "brick"
+```
+
+```r
 > rb1
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'rb1' not found
+Error: object 'rb1' not found
 ```
 
 ```r
@@ -172,7 +215,7 @@ Error in eval(expr, envir, enclos): object 'rb1' not found
 ```
 
 ```
-Error in identical(rb1, rb2): object 'rb1' not found
+Error: object 'rb1' not found
 ```
 
 # Discussion

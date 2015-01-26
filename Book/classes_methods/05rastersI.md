@@ -53,6 +53,7 @@ Class: GridTopology      integer       matrix       matrix          CRS
 Extends: 
 Class "SpatialPoints", directly
 Class "Spatial", by class "SpatialPoints", distance 2
+Class "SpatialPointsNULL", by class "SpatialPoints", distance 2
 
 Known Subclasses: "SpatialPixelsDataFrame"
 ```
@@ -168,13 +169,13 @@ Formal class 'SpatialPixelsDataFrame' [package "sp"] with 7 slots
 ```
 
 ```
-       x      y part.a part.b      dist soil ffreq
-1 181180 333740      1      0 0.0000000    1     1
-2 181140 333700      1      0 0.0000000    1     1
-3 181180 333700      1      0 0.0122243    1     1
-4 181220 333700      1      0 0.0434678    1     1
-5 181100 333660      1      0 0.0000000    1     1
-6 181140 333660      1      0 0.0122243    1     1
+       x      y part.a part.b    dist soil ffreq
+1 181180 333740      1      0 0.00000    1     1
+2 181140 333700      1      0 0.00000    1     1
+3 181180 333700      1      0 0.01222    1     1
+4 181220 333700      1      0 0.04347    1     1
+5 181100 333660      1      0 0.00000    1     1
+6 181140 333660      1      0 0.01222    1     1
 ```
 
 # Discussion

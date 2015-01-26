@@ -6,21 +6,41 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 
 ```
 
+```{r}
+library(sp)
+library(rgeos)
 
+# Cria os pontos
+pts <- SpatialPoints(cbind(c(1, 1, 2, 3), c(1, 2, 1.5, 2.5))) 
 
+# Gera o buffer ao redor dos pontos
+b1 <- gBuffer(pts, width=0.6, byid=FALSE)
+b2 <- gBuffer(pts, width=0.6, byid=TRUE)
 
+#Se byid = TRUE, mantem os circulos de todos os pontos
+#se byid = FALSE, corta as circulos que se inteceptam (dissolve)
 
+# Plota o buffer
+bufferFillColor=rgb(1,0,0,alpha=0.3)
+plot(b1, lwd=3, col=bufferFillColor)
+plot(b2, lwd=1, border="green", add=TRUE)
 
+# Depois plota os pontos e os ids
+points(pts, pch=20, cex=2)
+text(coordinates(pts), labels=seq_len(length(pts)), pos=4, font=2)
 
+###
+# Exemplo 2
+# 
+# require(sp)
+# require(rgeos)
+# d=data.frame(lat=c(33.95,34.95,34.70), lon=c(-118.40,-118.22,-118.43),ID=1:3)
+# 
+# coordinates(d)=~lon+lat
+# proj4string(d)=CRS("+init=epsg:4326")
+# 
+# buf = gBuffer(d,width=0.2)
+# plot(buf)
+# points(d)
 
-
-
-
-
-
-
-
-
-
-
-
+```

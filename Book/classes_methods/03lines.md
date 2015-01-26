@@ -47,7 +47,7 @@ Slots:
 Name:        lines        bbox proj4string
 Class:        list      matrix         CRS
 
-Extends: "Spatial"
+Extends: "Spatial", "SpatialLinesNULL"
 
 Known Subclasses: "SpatialLinesDataFrame"
 ```
@@ -67,6 +67,7 @@ Class:  data.frame        list      matrix         CRS
 Extends: 
 Class "SpatialLines", directly
 Class "Spatial", by class "SpatialLines", distance 2
+Class "SpatialLinesNULL", by class "SpatialLines", distance 2
 ```
 
 2. Import a shapefile with data represented by lines using the `readOGR` function from the `rgdal` package and then inspect the specific slots of a `SpatialLinesDataFrame` object:
@@ -76,12 +77,13 @@ Class "Spatial", by class "SpatialLines", distance 2
 ```
 
 ```
-rgdal: version: 0.9-1, (SVN revision 518)
+rgdal: version: 0.8-16, (SVN revision 498)
 Geospatial Data Abstraction Library extensions to R successfully loaded
-Loaded GDAL runtime: GDAL 1.10.1, released 2013/08/26
-Path to GDAL shared files: /usr/share/gdal/1.10
+Loaded GDAL runtime: GDAL 1.11.0, released 2014/04/16
+Path to GDAL shared files: C:/Users/raul/Documents/R/win-library/3.1/rgdal/gdal
+GDAL does not use iconv for recoding strings.
 Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
-Path to PROJ.4 shared files: (autodetected)
+Path to PROJ.4 shared files: C:/Users/raul/Documents/R/win-library/3.1/rgdal/proj
 ```
 
 ```r
@@ -133,7 +135,7 @@ Slot "coords":
         [,1]    [,2]
 [1,] 1084722 7791342
 [2,] 1084706 7791372
-[3,] 1081226 7797768
+[3,] 1081226 7797769
 [4,] 1081217 7797822
 ```
 

@@ -47,7 +47,7 @@ Slots:
 Name:     polygons   plotOrder        bbox proj4string
 Class:        list     integer      matrix         CRS
 
-Extends: "Spatial"
+Extends: "Spatial", "SpatialPolygonsNULL"
 
 Known Subclasses: "SpatialPolygonsDataFrame"
 ```
@@ -67,6 +67,7 @@ Class:  data.frame        list     integer      matrix         CRS
 Extends: 
 Class "SpatialPolygons", directly
 Class "Spatial", by class "SpatialPolygons", distance 2
+Class "SpatialPolygonsNULL", by class "SpatialPolygons", distance 2
 ```
 
 2. Import a shapefile with data represented by lines using the `readOGR` function from the `rgdal` package and then inspect the specific slots of a `SpatialLinesDataFrame` object:
