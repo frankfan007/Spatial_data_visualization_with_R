@@ -19,7 +19,7 @@ Slots:
 Name:       coords        bbox proj4string
 Class:      matrix      matrix         CRS
 
-Extends: "Spatial", "SpatialPointsNULL"
+Extends: "Spatial"
 
 Known Subclasses: 
 Class "SpatialPointsDataFrame", directly
@@ -42,7 +42,6 @@ Class:  data.frame     numeric      matrix      matrix         CRS
 Extends: 
 Class "SpatialPoints", directly
 Class "Spatial", by class "SpatialPoints", distance 2
-Class "SpatialPointsNULL", by class "SpatialPoints", distance 2
 
 Known Subclasses: 
 Class "SpatialPixelsDataFrame", directly, with explicit coerce
@@ -64,9 +63,9 @@ Building a `SpatialPoints` object.
 
 ```
 Formal class 'SpatialPoints' [package "sp"] with 3 slots
-  ..@ coords     : num [1:10, 1:2] 9 8 8 4 7 4 10 4 10 8 ...
+  ..@ coords     : num [1:10, 1:2] 10 9 7 9 9 4 9 3 5 10 ...
   .. ..- attr(*, "dimnames")=List of 2
-  ..@ bbox       : num [1:2, 1:2] 4 71 10 99
+  ..@ bbox       : num [1:2, 1:2] 3 70 10 100
   .. ..- attr(*, "dimnames")=List of 2
   ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot
 ```
@@ -87,8 +86,8 @@ Formal class 'SpatialPoints' [package "sp"] with 3 slots
 
 ```
           min max
-coords.x1   4  10
-coords.x2  71  99
+coords.x1   3  10
+coords.x2  70 100
 ```
 
 ```r
@@ -98,9 +97,9 @@ coords.x2  71  99
 
 ```
      coords.x1 coords.x2
-[1,]         9        85
-[2,]         8        88
-[3,]         8        94
+[1,]        10        95
+[2,]         9        90
+[3,]         7        70
 ```
 
 Building a `SpatialPointsDataFrame` object.

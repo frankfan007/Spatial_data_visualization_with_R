@@ -33,14 +33,15 @@ Error: cannot open the connection
 ```
 
 ```
-Classes 'EventData' and 'data.frame':	606 obs. of  3 variables:
- $ EID: int  1 2 3 4 5 6 7 8 9 10 ...
- $ X  : num  33.1 40.6 30.5 150.8 56.2 ...
- $ Y  : num  69 64.5 60 59.6 58 ...
- - attr(*, "parent.child")= num 
- - attr(*, "shpType")= int 1
- - attr(*, "prj")= chr "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137,298.257223563]],PRIMEM[\"Greenwich\",0],UNIT[\"Degre"| __truncated__
- - attr(*, "projection")= chr "LL"
+Formal class 'SpatialPointsDataFrame' [package "sp"] with 5 slots
+  ..@ data       :'data.frame':	606 obs. of  4 variables:
+  .. ..- attr(*, "data_types")= chr [1:4] "C" "C" "N" "C"
+  ..@ coords.nrs : num(0) 
+  ..@ coords     : num [1:606, 1:2] 33.1 40.6 30.5 150.8 56.2 ...
+  .. ..- attr(*, "dimnames")=List of 2
+  ..@ bbox       : num [1:2, 1:2] -165.3 -53.2 177.1 78.2
+  .. ..- attr(*, "dimnames")=List of 2
+  ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slots
 ```
 
 ```r
@@ -56,8 +57,7 @@ Error: object 'renda' not found
 ```
 
 ```
-Error: trying to get slot "data" from an object (class "EventData") that
-is not an S4 object
+Error: object 'renda' not found
 ```
 
 ```r
