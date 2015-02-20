@@ -43,7 +43,7 @@
   * [Proportional symbols](plotting/...)
   * [Colour gradients](plotting/...)
   * [Class intervals](plotting/...)
-* [Multiple plots](plotting/...)
+* [Multiple plots](plotting/multiple_plots.md)
   * [Multivariate data (old)](plotting/plotting_multivariate.md)
 * [3D plots](plotting/...)
 * [Interactive plots](plotting/...)
