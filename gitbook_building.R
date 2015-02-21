@@ -1,4 +1,5 @@
 library(Rgitbook)
+setwd("~/Copy/Projectos/Spatial_data_visualization_with_R/Book")
 
 #### Build a gitbook and erase the previous "Book" directory if any. ####
 #source('initGitbook_function.R') # Fixes bugs to allow the building of *.Rmd files.

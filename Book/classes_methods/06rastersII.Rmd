@@ -41,7 +41,7 @@ hasValues(rl)
 rl1 <- rl2 <- raster(nrow = 10, ncol = 10)
 values(rl1) <- runif(ncell(rl1))
 values(rl2) <- runif(ncell(rl2))
-rs <- stack(rl1, rl2)
+rs <- raster::stack(rl1, rl2)
 rs
 
 # Print properties of the first layer.

@@ -44,7 +44,7 @@ class       : RasterLayer
 dimensions  : 100, 100, 10000  (nrow, ncol, ncell)
 resolution  : 20, 10  (x, y)
 extent      : -1000, 1000, -500, 500  (xmin, xmax, ymin, ymax)
-coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 
+coord. ref. : +proj=utm +zone=48 +datum=WGS84 
 ```
 
 ```r
@@ -71,7 +71,7 @@ class       : RasterLayer
 dimensions  : 50, 50, 2500  (nrow, ncol, ncell)
 resolution  : 40, 20  (x, y)
 extent      : -1000, 1000, -500, 500  (xmin, xmax, ymin, ymax)
-coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 
+coord. ref. : +proj=utm +zone=48 +datum=WGS84 
 ```
 
 ```r
@@ -125,19 +125,19 @@ coord. ref. : +proj=utm +zone=48 +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0
 > rl1 <- rl2 <- raster(nrow = 10, ncol = 10)
 > values(rl1) <- runif(ncell(rl1))
 > values(rl2) <- runif(ncell(rl2))
-> rs <- stack(rl1, rl2)
-```
-
-```
-Error in as.list.default(x): no method for coercing this S4 class to a vector
-```
-
-```r
+> rs <- raster::stack(rl1, rl2)
 > rs
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'rs' not found
+class       : RasterStack 
+dimensions  : 10, 10, 100, 2  (nrow, ncol, ncell, nlayers)
+resolution  : 36, 18  (x, y)
+extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 
+names       :     layer.1,     layer.2 
+min values  : 0.001232836, 0.005430207 
+max values  :   0.9753517,   0.9773274 
 ```
 
 ```r
@@ -146,25 +146,33 @@ Error in eval(expr, envir, enclos): object 'rs' not found
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'rs' not found
+class       : RasterLayer 
+dimensions  : 10, 10, 100  (nrow, ncol, ncell)
+resolution  : 36, 18  (x, y)
+extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 
+data source : in memory
+names       : layer.1 
+values      : 0.001232836, 0.9753517  (min, max)
 ```
 
 ```r
 > ## Build a RasterBrick object.
 > rb1 <- brick(rs)
-```
-
-```
-Error in brick(rs): error in evaluating the argument 'x' in selecting a method for function 'brick': Error: object 'rs' not found
-```
-
-```r
 > rb2 <- brick(rl1, rl2)
 > rb1
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'rb1' not found
+class       : RasterBrick 
+dimensions  : 10, 10, 100, 2  (nrow, ncol, ncell, nlayers)
+resolution  : 36, 18  (x, y)
+extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 
+data source : in memory
+names       :     layer.1,     layer.2 
+min values  : 0.001232836, 0.005430207 
+max values  :   0.9753517,   0.9773274 
 ```
 
 ```r
@@ -172,7 +180,7 @@ Error in eval(expr, envir, enclos): object 'rb1' not found
 ```
 
 ```
-Error in identical(rb1, rb2): object 'rb1' not found
+[1] TRUE
 ```
 
 # Discussion

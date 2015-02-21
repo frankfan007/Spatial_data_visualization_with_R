@@ -42,3 +42,6 @@ http://stat405.had.co.nz/ggmap.pdf
 http://nceas.ucsb.edu/~frazier/RSpatialGuides/OverviewCoordinateReferenceSystems.pdf
 http://rwiki.sciviews.org/doku.php?id=tips:spatial-data:change_crs
 http://docs.ggplot2.org/current/
+
+Code:
+RastersII: the stack function from the raster package must to be ran as raster::stack to avoid namespaces clashes. This is a knitr problem and at the final edition of the book, the function should be changed from raster::stack to stack, either manually on the .md file or directly if the bug is fixed in a future knitr version. 

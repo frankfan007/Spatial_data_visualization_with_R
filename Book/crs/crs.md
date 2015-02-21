@@ -1,2 +1,8 @@
 
 
+Coordinate reference systems (CRS) describe geographical locations. Three basic components of a CRS are the ellipsoid, the datum and the projection. The ellipsoid is a model of the shape of the earth. Some ellipsoids are used as global models whereas others have a local scope. The last are more accurate for the area they were designed for but may not be appropriate for other locations. Currently, the most used is a global ellipsoid known as WGS84. Geographical locations are based on coordinate axes and the datum specify the origin and direction of axes. Datums are based on specific ellipsoids and sometimes have the same name as the ellipsoid. If the ellipsoid is projected from three to two dimensions the CRS is considered as projected. When the ellipsoid is not projected, locations are defined using Latitude and Longitude and the CRS is considered as unprojected.  
+
+The IOGP’s [EPSG](http://www.epsg.org) Geodetic Parameter Dataset is a collection of definitions of CRS and coordinate transformations which may be global, regional, national or local in application. The [PROJ.4](http://en.wikipedia.org/wiki/PROJ.4) is a C library for performing conversions between cartographic projections. In R, the rgdal and sp packages allow the definition and transformation of CRS available in a copy of the EPSG list, using the PROJ.4 description style.
+
+Spatial data manipulation and analysis often require the combination of information from different sources and to accomplish this task, those sources must have a common CRS. Recepies of this section explain how to identify and transform the CRS of spatial objects.  
+
